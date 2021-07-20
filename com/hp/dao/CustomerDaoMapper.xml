@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hp.dao.CustomerDao">
+
+	<!-- 登录 -->
+	<select id="selectByUp" resultType="Customer">
+	 	select * from customer where author=#{author} and password=#{password} 
+	</select>
+
+  <!-- 注册 -->
+  <insert id="insert">
+  	insert into customer(author,password,ip,time) values(#{author},#{password},#{ip},#{time})
+  </insert>
+  <!-- 全查 -->
+	<select id="selectAll" resultType="Customer">
+	 	select * from customer 
+	</select>
+</mapper>
